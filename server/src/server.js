@@ -7,8 +7,24 @@ import taskRoutes from "./routes/taskRoutes.js";
 
 const app = express();
 const port = process.env.PORT || 5000;
+const frontendOrigin = process.env.FRONTEND_URL?.replace(/\/$/, "");
+const allowedOrigins = new Set([
+  frontendOrigin,
+  "https://workshop-1mzj.onrender.com",
+  "http://localhost:5173",
+  "http://127.0.0.1:5173",
+].filter(Boolean));
 
-app.use(cors());
+app.use(cors({
+  origin(origin, callback) {
+    if (!origin || allowedOrigins.has(origin)) {
+      callback(null, true);
+      return;
+    }
+
+    callback(new Error("Origin is not allowed by CORS."));
+  },
+}));
 app.use(express.json());
 app.use("/api/tasks", taskRoutes);
 app.use((_req, res) => {

@@ -3,4 +3,5 @@ dist/
 .env
 .env.*
 !.env.example
+!client/.env.production
 npm-debug.log*

@@ -43,6 +43,12 @@ npm.cmd run dev
 
 Open the local URL printed by Vite, usually `http://localhost:5173`. Vite forwards `/api` requests to the Express server on port 5000.
 
+## Render deployment
+
+The production frontend build uses `client/.env.production` to send API requests to `https://workshop-bhfg.onrender.com`. The backend allows browser requests from `https://workshop-1mzj.onrender.com` and local Vite development origins. If the Render service URLs change, update `VITE_API_URL` in `client/.env.production` and set `FRONTEND_URL` in the backend service environment, then push the change so Render rebuilds both services.
+
+Keep `MONGODB_URI` configured as a Render backend environment variable; do not put database credentials in the repository. The frontend environment variable is public and contains only the API's base URL.
+
 ## API
 
 | Method | Path | Result |
