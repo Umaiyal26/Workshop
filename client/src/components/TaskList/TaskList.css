@@ -1,0 +1,45 @@
+.task-section {
+  min-width: 0;
+}
+
+.task-section .section-heading {
+  justify-content: flex-start;
+  gap: 9px;
+  min-height: 27px;
+  margin-bottom: 8px;
+}
+
+.task-section .section-heading h2 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.task-count {
+  min-width: 21px;
+  height: 21px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #e3ebe4;
+  color: #52675b;
+  font-size: 10px;
+}
+
+.task-items {
+  border-top: 1px solid var(--line);
+}
+
+.empty-message,
+.loading-message {
+  margin: 0;
+  padding: 14px 0;
+  color: #7a8981;
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.loading-message {
+  padding: 20px 0;
+  color: var(--green);
+}

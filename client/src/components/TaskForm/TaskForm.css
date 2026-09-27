@@ -1,0 +1,114 @@
+.task-form,
+.field-group {
+  display: grid;
+  gap: 8px;
+}
+
+.task-form {
+  gap: 17px;
+}
+
+.field-group label {
+  color: #3a5146;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.optional-label,
+.field-hint {
+  color: #8a9990;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.optional-label {
+  margin-left: 5px;
+}
+
+.field-group input,
+.field-group textarea,
+.field-group select {
+  width: 100%;
+  border: 1px solid #d8e2d9;
+  border-radius: 5px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--ink);
+  font-size: 13px;
+  transition: border-color 140ms ease, box-shadow 140ms ease;
+}
+
+.field-group input,
+.field-group select {
+  min-height: 42px;
+  padding: 0 12px;
+}
+
+.field-group textarea {
+  min-height: 72px;
+  padding: 10px 12px;
+  resize: vertical;
+}
+
+.field-group input::placeholder,
+.field-group textarea::placeholder {
+  color: #9aa79f;
+}
+
+.field-group input:focus,
+.field-group textarea:focus,
+.field-group select:focus {
+  border-color: #5f9b7a;
+  box-shadow: 0 0 0 3px rgba(36, 107, 80, 0.1);
+}
+
+.field-hint {
+  justify-self: end;
+}
+
+.form-footer {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.priority-field {
+  width: 132px;
+}
+
+.add-button {
+  min-width: 120px;
+  min-height: 42px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--green);
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  transition: background-color 140ms ease, transform 140ms ease;
+}
+
+.add-button:hover:not(:disabled) {
+  background: var(--green-dark);
+  transform: translateY(-1px);
+}
+
+.task-form-error {
+  margin: 0;
+  color: #a64435;
+  font-size: 12px;
+}
+
+@media (max-width: 380px) {
+  .form-footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .priority-field,
+  .add-button {
+    width: 100%;
+  }
+}
